@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/img/1.png":
+/*!***********************!*\
+  !*** ./src/img/1.png ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"./img/1.d397aca9.png\";\n\n//# sourceURL=webpack:///./src/img/1.png?");
+
+/***/ }),
+
 /***/ "./src/pages/test/index.js":
 /*!*********************************!*\
   !*** ./src/pages/test/index.js ***!
@@ -93,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\n__webpack_require__(/*! ./index.scss */ \"./src/pages/test/index.scss\");\n\nconsole.log('aa')\n\n//# sourceURL=webpack:///./src/pages/test/index.js?");
+eval("\n__webpack_require__(/*! ./index.scss */ \"./src/pages/test/index.scss\");\n\n__webpack_require__(/*! ../../img/1.png */ \"./src/img/1.png\");\n\nconsole.log('aa')\n\n//# sourceURL=webpack:///./src/pages/test/index.js?");
 
 /***/ }),
 

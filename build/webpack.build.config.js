@@ -2,6 +2,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const baseWebpackConfig = require('./webpack.base.config');
 const baseConfig = require('./config')
@@ -46,6 +47,11 @@ module.exports = merge(baseWebpackConfig, {
         new CleanWebpackPlugin({
 			verbose: true,
 			dry: false
+		}),
+		new ImageminPlugin({
+			pngquant: {
+				quality: '95-100'
+			}
 		}),
         ...getHtmlTemplate(baseConfig.htmlEntryPath, true)
     ]

@@ -36,7 +36,7 @@ module.exports = merge(baseWebpackConfig, {
 				options: {
 					limit: 100,
 					publicPath: baseConfig.devPublicPath,
-					name: 'img/[name].[hash:8].[ext]'
+					name: 'img/[name].[hash:8].[ext]'      //name属性改变图片打包目录和文件名
 				}
 			}]
 		}]

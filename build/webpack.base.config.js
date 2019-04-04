@@ -30,9 +30,23 @@ module.exports = {
             test: /\.(scss|css)$/,
             use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
+                    use: [{
+                        loader: 'css-loader'
+                    },{
+                        loader: 'sass-loader',
+                    },{
+                        loader: 'postcss-loader'
+                    }]
                 }),
             }, 
+            //打包html文件里的图片
+            {
+                test: /\.html$/,
+                include: path.resolve(__dirname, '../src'),
+                use: [{
+                    loader: 'html-withimg-loader'
+                }]
+            }
         ]
     },
     plugins: [
