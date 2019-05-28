@@ -3,6 +3,7 @@ const path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const spriteSmithPlugin = require('webpack-spritesmith');
 
 const baseConfig = require('./config')
 const { getEntries } = require('./getEntry')
@@ -54,6 +55,23 @@ module.exports = {
         new ExtractTextPlugin({
 			filename: 'css/[name].[hash:8].css',
 	        allChunks: true
-		})
+        }),
+        new spriteSmithPlugin({
+            src: {
+                cwd: path.resolve(__dirname, '../src/images/sprites'),
+                glob: '*.png'
+            },
+            target: {
+                image: path.resolve(__dirname, '../src/images/sprite.png'),
+                  css: path.resolve(__dirname, '../src/style/sprite.css'),
+            },
+            apiOptions: {
+               cssImageRef: '../images/sprite.png'
+            },
+            spritesmithOptions: {
+                algorithm: 'top-down',
+                padding: 10
+            }
+        })
     ]
 }
